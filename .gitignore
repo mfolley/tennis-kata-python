@@ -35,6 +35,9 @@ MANIFEST
 pip-log.txt
 pip-delete-this-directory.txt
 
+
+**/.idea/workspace.xml 
+**/.idea/tasks.xml
 # Unit test / coverage reports
 htmlcov/
 .tox/
