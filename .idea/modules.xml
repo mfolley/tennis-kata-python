@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/tennis-kata-python.iml" filepath="$PROJECT_DIR$/.idea/tennis-kata-python.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/tennis-kata-python2.iml" filepath="$PROJECT_DIR$/.idea/tennis-kata-python2.iml" />
     </modules>
   </component>
 </project>
