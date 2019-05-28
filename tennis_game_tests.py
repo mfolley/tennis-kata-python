@@ -17,7 +17,7 @@ class TestTennisGame(unittest.TestCase):
         # act
         actual_score = tennis_game.score()
         # assert
-        self.assertEqual("fifteen-all",actual_score)
+        self.assertEqual("fifteen-all", actual_score)
 
     def test_returns_love_fifteen_when_score_0_1(self):
         # arrange
@@ -99,7 +99,7 @@ class TestTennisGame(unittest.TestCase):
         # assert
         self.assertEqual("player2 wins", actual_score)
 
-    def test_returns_deuce_score_16_16(self):
+    def test_returns_deuce_score_score_16_16(self):
         # arrange
         tennis_game = TennisGame(Player(16), Player(16))
         # act
