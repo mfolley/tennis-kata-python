@@ -1,6 +1,15 @@
 class Player:
     def __init__(self, points=0):
         self.points = points
+        self.name = ""
+
+    def with_points(self, points):
+        self.points = points
+        return self
+
+    def called(self, name):
+        self.name = name
+        return self
 
 
 class TennisGame:
@@ -10,15 +19,21 @@ class TennisGame:
         self.player1 = player1
         self.player2 = player2
 
+    def with_players(self, player1, player2):
+        self.player1 = player1
+        self.player2 = player2
+        return self
+
+    @property
     def score(self):
-        if self.player1.points >= 4 and self.player1.points - self.player2.points >= 2:
-            return "player1 wins"
-        if self.player2.points >= 4 and self.player2.points - self.player1.points >= 2:
-            return "player2 wins"
-        if self.player1.points >= 3 and self.player1.points > self.player2.points:
-            return "advantage player1"
-        if self.player2.points >= 3 and self.player2.points > self.player1.points:
-            return "advantage player2"
+        if self.player1.points >= 4 or self.player2.points >= 4:
+            players = [self.player1, self.player2]
+            for player in players:
+                [other_player] = [p for p in players if p != player]
+                if player.points > other_player.points:
+                    if player.points - other_player.points >= 2:
+                        return player.name + " wins"
+                    return "advantage " + player.name
         if self.player1.points == self.player2.points:
             if self.player1.points >= 3:
                 return "deuce"
