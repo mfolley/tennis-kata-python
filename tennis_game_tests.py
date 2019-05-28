@@ -5,8 +5,7 @@ from tennis_game import TennisGame, Player
 class TestTennisGame(unittest.TestCase):
     def test_returns_fifteen_love_when_score_1_0(self):
         # arrange
-        tennis_game = TennisGame()\
-            .with_players(
+        tennis_game = TennisGame().with_players(
                 Player().called("Rafael").with_points(1),
                 Player().called("Roger").with_points(0)
         )
@@ -17,7 +16,10 @@ class TestTennisGame(unittest.TestCase):
 
     def test_returns_fifteen_all_when_score_1_1(self):
         # arrange
-        tennis_game = TennisGame(Player(1), Player(1))
+        tennis_game = TennisGame().with_players(
+                Player().called("Rafael").with_points(1),
+                Player().called("Roger").with_points(1)
+        )
         # act
         actual_score = tennis_game.score
         # assert
@@ -25,7 +27,10 @@ class TestTennisGame(unittest.TestCase):
 
     def test_returns_love_fifteen_when_score_0_1(self):
         # arrange
-        tennis_game = TennisGame(Player(0), Player(1))
+        tennis_game = TennisGame().with_players(
+                Player().called("Rafael").with_points(0),
+                Player().called("Roger").with_points(1)
+        )
         # act
         actual_score = tennis_game.score
         # assert
@@ -33,7 +38,10 @@ class TestTennisGame(unittest.TestCase):
 
     def test_returns_thirty_fifteen_when_score_2_1(self):
         # arrange
-        tennis_game = TennisGame(Player(2), Player(1))
+        tennis_game = TennisGame().with_players(
+                Player().called("Rafael").with_points(2),
+                Player().called("Roger").with_points(1)
+        )
         # act
         actual_score = tennis_game.score
         # assert
@@ -41,7 +49,10 @@ class TestTennisGame(unittest.TestCase):
 
     def test_returns_thirty_forty_when_score_2_3(self):
         # arrange
-        tennis_game = TennisGame(Player(2), Player(3))
+        tennis_game = TennisGame().with_players(
+                Player().called("Rafael").with_points(2),
+                Player().called("Roger").with_points(3)
+        )
         # act
         actual_score = tennis_game.score
         # assert
@@ -49,7 +60,10 @@ class TestTennisGame(unittest.TestCase):
 
     def test_returns_deuce_when_score_3_3(self):
         # arrange
-        tennis_game = TennisGame(Player(3), Player(3))
+        tennis_game = TennisGame().with_players(
+                Player().called("Rafael").with_points(3),
+                Player().called("Roger").with_points(3)
+        )
         # act
         actual_score = tennis_game.score
         # assert
@@ -123,7 +137,10 @@ class TestTennisGame(unittest.TestCase):
 
     def test_returns_deuce_score_score_16_16(self):
         # arrange
-        tennis_game = TennisGame(Player(16), Player(16))
+        tennis_game = TennisGame().with_players(
+                Player().called("Rafael").with_points(16),
+                Player().called("Roger").with_points(16)
+        )
         # act
         actual_score = tennis_game.score
         # assert
